@@ -1,0 +1,119 @@
+body {
+    background-color: black;
+    
+}
+
+
+#tictactoe{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+}
+
+#tictactoe table{
+    border-color:white;
+    border-width: thick;
+}
+
+#x-symbol, #x {
+    color: blue;
+}
+
+#o-symbol, #o {
+    color: red;
+}
+
+
+/* Inpired by design at https://www.sliderrevolution.com/resources/css-text-animation*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Mono:400');
+
+#ttt{ 
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: top;
+  justify-content: center;
+  margin: 0;
+  background: black;
+  color: #fff;
+  font-size: 96px;
+  font-family: 'Courier New', monospace;
+  letter-spacing: -7px;
+  animation: glitch 1s linear infinite;
+    font-variant-caps: all-small-caps
+  
+}
+
+
+
+@keyframes glitch{
+  2%,64%{
+    transform: translate(2px,0) skew(0deg);
+  }
+  4%,60%{
+    transform: translate(-2px,0) skew(0deg);
+  }
+  62%{
+    transform: translate(0,0) skew(5deg); 
+  }
+}
+
+#ttt:before,
+span:after{
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+#ttt:before{
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop{
+  2%,64%{
+    transform: translate(2px,-2px);
+  }
+  4%,60%{
+    transform: translate(-2px,2px);
+  }
+  62%{
+    transform: translate(13px,-1px) skew(-13deg); 
+  }
+}
+
+#ttt:after{
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom{
+  2%,64%{
+    transform: translate(-2px,0);
+  }
+  4%,60%{
+    transform: translate(-2px,0);
+  }
+  62%{
+    transform: translate(-22px,5px) skew(21deg); 
+  }
+}
+
+#scoreboard{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    padding-top: 10px;
+   
+    
+}
+
+#scoreX, #scoreO, #x, #o{
+    color: white;
+    font-size: 20px;
+    width: auto;
+    height: auto;}
